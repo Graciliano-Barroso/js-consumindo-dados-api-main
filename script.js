@@ -13,7 +13,5 @@ async function buscaEndereco(cep) {
     }
 }
 
-let ceps = ['01001000', '01001001', '01001002', '01001003', '01001004', '01001005', '01001006',];
-let conjuntoCeps = ceps.map(valores => buscaEndereco(valores));
-console.log(conjuntoCeps);
-Promise.all(conjuntoCeps).then(respostas => console.log(respostas));
+var cep = document.getElementById('cep');
+cep.addEventListener("focusout", () => buscaEndereco(cep.value));
